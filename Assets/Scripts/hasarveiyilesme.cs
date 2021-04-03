@@ -7,14 +7,15 @@ public class hasarveiyilesme : MonoBehaviour
     int damage;
     int heal;
     int health;
-
+    public healthbar hpbar;
+    
 
     void Start()
     {
         health = 100;
         damage = 10;
         heal = 10;
-
+        hpbar.GetComponent<healthbar>().SetMaxHealth(health,0);
     }
 
     void Update()
@@ -32,15 +33,17 @@ public class hasarveiyilesme : MonoBehaviour
 
     void Hasar()
     {
-        health = health - damage;
+        
         if(health<=0)
         {
             Debug.Log("Öldün çık");
         }
         else
            {
-            Debug.Log(health);
-         
+            health = health - damage;
+
+            hpbar.GetComponent<healthbar>().SetHealth(health);
+
 
         }
 
@@ -52,7 +55,8 @@ public class hasarveiyilesme : MonoBehaviour
         if(health<100 && health>0)
         {
             health = health + heal;
-            Debug.Log("İyileştin"+ health);
+
+            hpbar.GetComponent<healthbar>().SetHealth(health);
 
         }
         else
