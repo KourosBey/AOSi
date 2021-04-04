@@ -33,7 +33,7 @@ public class hasarveiyilesme : MonoBehaviour
 
     void Hasar()
     {
-        
+         
         if(health<=0)
         {
             Debug.Log("Öldün çık");
