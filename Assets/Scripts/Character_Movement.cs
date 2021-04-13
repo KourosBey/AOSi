@@ -30,8 +30,12 @@ public class Character_Movement : MonoBehaviour
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("speed", movement.magnitude);
-
-        
+        if(movement.x != 0 || movement.y != 0) {
+       
+            animator.SetFloat("LastHorizontal", movement.x);
+            animator.SetFloat("LastVertical", movement.y);
+            
+        }
 
 
     }
